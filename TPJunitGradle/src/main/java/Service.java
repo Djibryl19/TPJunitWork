@@ -36,6 +36,10 @@ public class Service implements Statistique {
         if (montantRemise > remiseMax) {
             montantRemise = remiseMax;
         }
+        else {
+            // Pas d'action nécessaire
+            // montantRemise reste inchangé
+        }
 
         prixTotal -= montantRemise;
 
