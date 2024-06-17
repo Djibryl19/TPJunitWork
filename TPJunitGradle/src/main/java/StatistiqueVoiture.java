@@ -28,17 +28,14 @@ public class StatistiqueVoiture implements Statistique{
             Voiture voiture = voitures.get(i);
             double prixVoiture = voiture.getPrix();
 
-            // Calcul de la remise
             int groupeDeCinq = (i / 5) + 1;
             double remise = 0.05 * groupeDeCinq * prixVoiture;
 
-            // Appliquer la remise, mais ne pas dépasser la remise totale maximale de 20 000 euros
             if (remiseTotale + remise > 20000) {
                 remise = 20000 - remiseTotale;
             }
             remiseTotale += remise;
 
-            // Calculer le prix après remise
             prixTotal += prixVoiture - remise;
         }
 
